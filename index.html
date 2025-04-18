@@ -109,7 +109,13 @@
       height: auto;
     }
 
-    /* Responsive fix untuk bagian "About" */
+    audio {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 10px;
+    }
+
     .about-container {
       display: flex;
       flex-wrap: wrap;
@@ -242,8 +248,7 @@
         <video width="100%" height="auto" controls>
           <source src="img/jimin.mp4" type="video/mp4" />
         </video>
-        <br />
-        <audio controls style="margin-top: 10px;">
+        <audio controls>
           <source src="img/Jimin_-_Who.mp3" type="audio/mpeg" />
           Browser Anda tidak mendukung audio.
         </audio>
