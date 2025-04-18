@@ -6,75 +6,165 @@
     <meta name="description" content="Halaman perkenalan tentang hobi dan minat.">
     <title>Portofolio Nabila</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        header {
+            background-color: #d4bdff;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        nav {
+            position: relative;
+        }
+        .menu-toggle {
+            display: none; /* Hide by default */
+            cursor: pointer;
+            font-size: 24px; /* Size of the hamburger icon */
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        main {
+            max-width: 1250px;
+            margin: 20px auto;
+            background-color: #d4bdff;
+            padding: 35px;
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        section {
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+        }
+        h2 {
+            color: #b086ff; /* Blue color for section headers */
+            display: inline-block; /* Make header inline to fit the content */
+            border-bottom: 2px solid #b086ff; /* Blue underline */
+            padding-bottom: 5px; /* Space between text and underline */
+            margin: 0; /* Remove default margin */
+        }
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Space between the columns */
+        }
+        .flex-item {
+            flex: 1; /* Equal height for both sections */
+            min-width: 300px; /* Minimum width for responsiveness */
+        }
+        .media-container {
+            display: flex;
+            gap: 20px; /* Space between articles and multimedia */
+        }
+        /* Media Queries */
+        @media (max-width: 600px) {
+            .menu-toggle {
+                display: block; /* Show hamburger on small screens */
+            }
+            .nav-links {
+                display: none; /* Hide links by default */
+                flex-direction: column; /* Stack links vertically */
+                width: 100%; /* Full width */
+                position: absolute; /* Absolute positioning for dropdown */
+                top: 50px; /* Position below the header */
+                left: 0;
+                background-color: #d4bdff; /* Background color for dropdown */
+            }
+            .nav-links.active {
+                display: flex; /* Show links when active */
+            }
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<body bgcolor="#f0f0f0" style="font-family: 'Poppins', sans-serif; margin: 0; padding: 20px; color: #333;">
-    <header align="center" style="background-color: #e0e0e0; padding: 10px; border-radius: 8px;">
+<body>
+    <header>
         <h1>Welcome to My World: Nabila's Portfolio</h1>
-        <nav style="margin: 20px 0;">
-            <a href="#about">About</a> | 
-            <a href="#projects">Projects</a> | 
-            <a href="#articles">Articles</a> | 
-            <a href="#multimedia">Multimedia</a> | 
-            <a href="#contact">Contact</a>
+        <nav>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#articles">Articles</a>
+                <a href="#multimedia">Multimedia</a>
+                <a href="#contact">Contact</a>
+            </div>
         </nav>
     </header>
 
-    <main style="max-width: 1250px; margin: 20px auto; background-color: white; padding: 35px; border-radius: 5px;">
-        <section id="about" style="display: flex; align-items: center; margin-bottom: 20px;">
-            <div style="flex: 1;">
+    <main>
+        <div class="flex-container">
+            <section id="about" class="flex-item">
                 <h2>About</h2>
                 <p align="justify">안녕하세요! Saya Nabila Gusniar Putri, mahasiswa Sistem Informasi di Universitas Internasional Semen Indonesia. Ini adalah langkah awal saya dalam mengeksplorasi dunia pemrograman web, dengan tugas pertama mata kuliah Pemrograman Web yaitu membuat halaman HTML sederhana. Saya sangat semangat dan antusias untuk belajar dan berkembang di bidang ini!</p>
-            </div>
-            <div>
-                <img src="img/nabila.jpg" alt="Nabila Gusniar Putri" width="200" height="200" style="object-fit: cover; border-radius: 10px; margin-left: 20px;">
-            </div>
-        </section>
-
-        <h2>Hobbies:</h2>
-        <ul style="background-color: #f1f1f1; padding: 30px; border-radius: 5px;">
-            <li>Membaca cerita bergambar yang dipublikasikan secara digital (manhwa, manga, manhua, webtoon, dll)</li>
-            <li>Belajar bahasa baru dengan menonton drama, seperti drama korea dan drama china</li>
-            <li>Fotografi pemandangan dan potret</li>
-        </ul>
+            </section>
+            <section class="flex-item">
+                <h2>Hobbies:</h2>
+                <ul style="background-color: #f1f1f1; padding: 20px; border-radius: 5px; list-style-type: disc; margin-left: 20px; margin-top: 5px;">
+                    <li>Membaca cerita bergambar yang dipublikasikan secara digital (manhwa, manga, manhua, webtoon, dll)</li>
+                    <li>Belajar bahasa baru dengan menonton drama, seperti drama korea dan drama china</li>
+                    <li>Fotografi pemandangan dan potret</li>
+                </ul>
+            </section>
+        </div>
 
         <section id="projects">
             <h2>Projects</h2>
             <div style="text-align: center;">
                 <img src="img/dpp.jpg" alt="Project Description 1" width="700" style="margin: 10px;">
-                <p>UX design perencanaan aplikasi berbasis sosial media "Postly: Kreativitas Mengalir, Interaksi Tak Terbatas!”. Postly
-                    merupakan aplikasi sosial media untuk berbagi pemikiran, ide, dan update singkat dalam bentuk
-                    teks (dengan batasan karakter), gambar, atau video pendek dengan kualitas yang tinggi.</p>
+                <p>UX design perencanaan aplikasi berbasis sosial media "Postly: Kreativitas Mengalir, Interaksi Tak Terbatas!”.</p>
                 
                 <img src="img/ppic.jpg" alt="Project Description 2" width="700" style="margin: 10px;">
                 <p>Stock Sense adalah rancangan aplikasi yang memberikan kemudahan penjual untuk mengelola stock bahan.</p>
                 
                 <img src="img/wasling.jpg" alt="Project Description 3" width="700" style="margin: 10px;">
-                <p>Zero Waste Heroes adalah sebuah program aplikasi yang berkomitmen untuk mengurangi limbah, terutama limbah makanan, dengan cara memanfaatkan sisa makanan yang masih layak untuk didonasikan, serta mengolah sisa makanan yang tidak layak dengan cara yang berkelanjutan..</p>
+                <p>Zero Waste Heroes adalah sebuah program aplikasi yang berkomitmen untuk mengurangi limbah, terutama limbah makanan.</p>
             </div>
         </section>
 
-        <section id="articles">
-            <h2>Articles:</h2>
-            <ul style="background-color: #f1f1f1; padding: 30px; border-radius: 5px;">
-                <li><a href="https://www.kompasiana.com/nabilagusniarputri9198/655b4e78ee794a67dc7f1d52/concept-information-systems" style="text-decoration: none; color: #1100ff;">Concept Information Systems</a></li>
-                <p>Artikel ini membahas tentang Sistem informasi yang berperan sebagai jembatan antara aspek teknis (informatika) dan non-teknis (manajemen), serta berhubungan dengan elemen eksternal seperti pemasok, pelanggan, lembaga regulasi, pemegang saham, dan pesaing.</p>
-            </ul>
-        </section>
+        <div class="media-container">
+            <section id="articles" style="flex: 1;">
+                <h2>Articles</h2>
+                <ul style="background-color: #d4bdff; padding: 30px; border-radius: 5px;">
+                    <li><a href="https://www.kompasiana.com/nabilagusniarputri9198/655b4e78ee794a67dc7f1d52/concept-information-systems" style="text-decoration: none; color: #1100ff;">Concept Information Systems</a></li>
+                    <p>Artikel ini membahas tentang Sistem informasi yang berperan sebagai jembatan antara aspek teknis (informatika) dan non-teknis (manajemen).</p>
+                </ul>
+            </section>
 
-        <section id="multimedia" style="margin-top: 20px;">
-            <h2>Multimedia Elements:</h2>
-            <video width="320" height="240" controls>
-                <source src="img/jimin.mp4" type="video/mp4">
-            </video>
-
-            <audio controls>
-                <source src="img/Jimin_-_Who.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </section>
+            <section id="multimedia" style="flex: 1;">
+                <h2>Multimedia Elements</h2>
+                <video width="320" height="240" controls>
+                    <source src="img/jimin.mp4" type="video/mp4">
+                </video>
+                <audio controls>
+                    <source src="img/Jimin_-_Who.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </section>
+        </div>
 
         <section id="contact" style="background-color: #f1f1f1; padding: 20px; border-radius: 5px; margin-top: 20px;">
-            <h2>Contact</h2>
+            <h2 style="margin-bottom: 10px;">Contact</h2>
             <form>
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name"><br><br>
@@ -90,5 +180,12 @@
     <footer style="text-align: center; margin-top: 20px;">
         <p>&copy; 2025 Nabila Gusniar Putri. All rights reserved.</p>
     </footer>
+
+    <script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+    </script>
 </body>
 </html>
