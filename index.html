@@ -7,6 +7,10 @@
   <title>Portofolio Nabila</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+  
     body {
       background-color: #ffffff;
       font-family: 'Poppins', sans-serif;
@@ -14,53 +18,53 @@
       padding: 20px;
       color: #333;
     }
-
+  
     header {
       background-color: #d4bdff;
       padding: 35px;
       border-radius: 8px;
       text-align: center;
     }
-
+  
     nav {
       position: relative;
     }
-
+  
     .menu-toggle {
       display: none;
       cursor: pointer;
       font-size: 24px;
     }
-
+  
     .nav-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
-
+  
     .nav-links a {
       margin: 0 15px;
       text-decoration: none;
       color: #333;
     }
-
+  
     main {
       max-width: 1250px;
       margin: 20px auto;
       background-color: #d4bdff;
-      padding: 35px;
-      border-radius: 5px;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    section {
       padding: 20px;
       border-radius: 5px;
-      background-color: #f1f1f1;
     }
-
+  
+    section {
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      padding: 20px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+    }
+  
     h2 {
       color: #b086ff;
       display: inline-block;
@@ -68,44 +72,48 @@
       padding-bottom: 5px;
       margin: 0;
     }
-
+  
     .flex-container,
     .media-container {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
     }
-
+  
     .flex-item {
       flex: 1;
-      min-width: 250px; /* Minimum width for responsiveness */
-      box-sizing: border-box; /* Ensure padding is included in width */
+      min-width: 250px;
+      box-sizing: border-box;
     }
-
+  
     .project-img {
-      max-width: 100%; /* Ensure images are responsive */
+      max-width: 75%;
       height: auto;
       margin: 10px auto;
       display: block;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
-
+  
     .project-text {
       text-align: center;
       margin-bottom: 30px;
     }
-
+  
     footer {
       text-align: center;
       margin-top: 20px;
     }
-
-    /* Mobile */
+  
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  
     @media (max-width: 600px) {
       .menu-toggle {
         display: block;
       }
-
+  
       .nav-links {
         display: none;
         flex-direction: column;
@@ -115,59 +123,52 @@
         left: 0;
         background-color: #d4bdff;
       }
-
+  
       .nav-links.active {
         display: flex;
       }
-
+  
       .flex-container,
       .media-container {
         flex-direction: column;
       }
-
-      img {
-        max-width: 100%;
-        height: auto;
+  
+      main {
+        padding: 15px;
       }
     }
-
-    /* Tablet */
+  
     @media (min-width: 601px) and (max-width: 1024px) {
       .flex-container,
       .media-container {
         flex-direction: column;
       }
-
+  
       main {
         padding: 20px;
       }
-
+  
       .nav-links a {
         margin: 10px;
       }
-
-      img {
-        width: 100%;
-        height: auto;
-      }
     }
-
-    /* Desktop */
+  
     @media (min-width: 1025px) {
       .flex-container,
       .media-container {
         flex-direction: row;
       }
-
-      main {      
+  
+      main {
         padding: 35px;
       }
-
+  
       .nav-links a {
         margin: 0 15px;
       }
     }
   </style>
+  
 </head>
 <body>
   <header>
@@ -248,7 +249,7 @@
       </section>
     </div>
 
-    <section id="contact" style="margin-top: 20px;">
+    <section id="contact" class="flex-item">
       <h2>Contact</h2>
       <form>
         <label for="name">Name:</label><br />
@@ -261,6 +262,7 @@
       </form>
     </section>
   </main>
+  
   <footer>
     <p>&copy; 2025 Nabila Gusniar Putri. All rights reserved.</p>
   </footer>
