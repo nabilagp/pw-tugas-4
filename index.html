@@ -14,30 +14,36 @@
             padding: 20px;
             color: #333;
         }
+    
         header {
             background-color: #d4bdff;
             padding: 35px;
             border-radius: 8px;
             text-align: center;
         }
+    
         nav {
             position: relative;
         }
+    
         .menu-toggle {
-            display: none; /* Hide by default */
+            display: none;
             cursor: pointer;
-            font-size: 24px; /* Size of the hamburger icon */
+            font-size: 24px;
         }
+    
         .nav-links {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
+    
         .nav-links a {
             margin: 0 15px;
             text-decoration: none;
             color: #333;
         }
+    
         main {
             max-width: 1250px;
             margin: 20px auto;
@@ -48,54 +54,116 @@
             grid-template-columns: 1fr;
             gap: 20px;
         }
+    
         section {
             padding: 20px;
             border-radius: 5px;
             background-color: #f1f1f1;
         }
+    
         h2 {
-            color: #b086ff; /* Blue color for section headers */
-            display: inline-block; /* Make header inline to fit the content */
-            border-bottom: 2px solid #b086ff; /* Blue underline */
-            padding-bottom: 5px; /* Space between text and underline */
-            margin: 0; /* Remove default margin */
+            color: #b086ff;
+            display: inline-block;
+            border-bottom: 2px solid #b086ff;
+            padding-bottom: 5px;
+            margin: 0;
         }
+    
         .flex-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px; /* Space between the columns */
+            gap: 20px;
         }
+    
         .flex-item {
-            flex: 1; /* Equal height for both sections */
-            min-width: 300px; /* Minimum width for responsiveness */
+            flex: 1;
+            min-width: 300px;
         }
+    
         .media-container {
             display: flex;
-            gap: 20px; /* Space between articles and multimedia */
+            gap: 20px;
         }
-        /* Media Queries */
+    
+        /* Mobile (<600px) */
         @media (max-width: 600px) {
             .menu-toggle {
-                display: block; /* Show hamburger on small screens */
+                display: block;
             }
+    
             .nav-links {
-                display: none; /* Hide links by default */
-                flex-direction: column; /* Stack links vertically */
-                width: 100%; /* Full width */
-                position: absolute; /* Absolute positioning for dropdown */
-                top: 50px; /* Position below the header */
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 50px;
                 left: 0;
-                background-color: #d4bdff; /* Background color for dropdown */
+                background-color: #d4bdff;
             }
+    
             .nav-links.active {
-                display: flex; /* Show links when active */
+                display: flex;
+            }
+    
+            .flex-container,
+            .media-container {
+                flex-direction: column;
+            }
+    
+            img {
+                width: 100%;
+                height: auto;
             }
         }
+    
+        /* Tablet (600px - 1024px) */
+        @media (min-width: 601px) and (max-width: 1024px) {
+            .flex-container,
+            .media-container {
+                flex-direction: column;
+            }
+    
+            main {
+                padding: 20px;
+            }
+    
+            .nav-links a {
+                margin: 10px;
+            }
+    
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    
+        /* Desktop (>1024px) */
+        @media (min-width: 1025px) {
+            .flex-container,
+            .media-container {
+                flex-direction: row;
+            }
+    
+            main {
+                padding: 35px;
+            }
+    
+            .nav-links a {
+                margin: 0 15px;
+            }
+    
+            img {
+                width: auto;
+                max-width: 100%;
+            }
+        }
+    
         footer {
             text-align: center;
             margin-top: 20px;
         }
     </style>
+    
 </head>
 <body>
     <header>
@@ -139,14 +207,14 @@
         <section id="projects">
             <h2>Projects</h2>
             <div style="text-align: center;">
-                <img src="img/dpp.jpg" alt="Project Description 1" width="700" style="margin: 10px;  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
-                <p>UX design perencanaan aplikasi berbasis sosial media "Postly: Kreativitas Mengalir, Interaksi Tak Terbatas!”.</p>
+                <img src="img/dpp.jpg" alt="Project Description 1" style="max-width: 700px; width: 100%; margin: 10px;  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
+                <p>UX design perencanaan aplikasi berbasis sosial media "Postly: Kreativitas Mengalir, Interaksi Tak Terbatas!”. Postly merupakan aplikasi sosial media untuk berbagi pemikiran, ide, dan update singkat dalam bentuk teks (dengan batasan karakter), gambar, atau video pendek dengan kualitas yang tinggi.</p>
                 
-                <img src="img/ppic.jpg" alt="Project Description 2" width="700" style="margin: 10px;  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
+                <img src="img/ppic.jpg" alt="Project Description 2" style="max-width: 700px; width: 100%; margin: 10px;  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
                 <p>Stock Sense adalah rancangan aplikasi yang memberikan kemudahan penjual untuk mengelola stock bahan.</p>
                 
-                <img src="img/wasling.jpg" alt="Project Description 3" width="700" style="margin: 10px;  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
-                <p>Zero Waste Heroes adalah sebuah program aplikasi yang berkomitmen untuk mengurangi limbah, terutama limbah makanan.</p>
+                <img src="img/wasling.jpg" alt="Project Description 3" style="max-width: 700px; width: 100%; margin: 10px;  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
+                <p>Zero Waste Heroes adalah sebuah program aplikasi yang berkomitmen untuk mengurangi limbah, terutama limbah makanan, dengan cara memanfaatkan sisa makanan yang masih layak untuk didonasikan, serta mengolah sisa makanan yang tidak layak dengan cara yang berkelanjutan.</p>
             </div>
         </section>
 
@@ -154,7 +222,7 @@
             <section id="articles" style="flex: 1;">
                 <h2>Articles</h2>
                 <ul style="background-color: #d4bdff; padding: 30px; border-radius: 5px;">
-                    <li><a href="https://www.kompasiana.com/nabilagusniarputri9198/655b4e78ee794a67dc7f1d52/concept-information-systems" style="text-decoration: none; color: #1100ff;">Concept Information Systems</a></li>
+                    <li><a href="https://www.kompasiana.com/nabilagusniarputri9198/655b4e78ee794a67dc7f1d52/concept-information-systems" style="text-decoration: none; color: #7300ff;">Concept Information Systems</a></li>
                     <p>Artikel ini membahas tentang Sistem informasi yang berperan sebagai jembatan antara aspek teknis (informatika) dan non-teknis (manajemen).</p>
                 </ul>
             </section>
